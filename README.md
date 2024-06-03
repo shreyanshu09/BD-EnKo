@@ -17,82 +17,19 @@ Official Implementation of BD-EnKo Dataset and Generator
 
 The official implementation of the BlockNet model is available in this [GitHub](https://github.com/shreyanshu09/BlockNet) repository.
 
-## Pre-trained Models and Web Demos
+## Datasets
 
-Gradio web demos are available! [![Demo](https://img.shields.io/badge/Demo-Gradio-brightgreen)](#demo) [![Demo](https://img.shields.io/badge/Demo-Colab-orange)](#demo)
-|:--:|
-|![image](misc/screenshot_gradio_demos.png)|
-- You can run the demo with `./app.py` file.
-- Sample images are available at `./misc` and more receipt images are available at [CORD dataset link](https://huggingface.co/datasets/naver-clova-ix/cord-v2).
-- Web demos are available from the links in the following table.
-- Note: We have updated the Google Colab demo (as of June 15, 2023) to ensure its proper working.
+![image](misc/)
 
-|Task|Sec/Img|Score|Trained Model|<div id="demo">Demo</div>|
-|---|---|---|---|---|
-| [CORD](https://github.com/clovaai/cord) (Document Parsing)   |   0.7 /<br> 0.7 /<br> 1.2   |  91.3 /<br> 91.1 /<br> 90.9    | [donut-base-finetuned-cord-v2](https://huggingface.co/naver-clova-ix/donut-base-finetuned-cord-v2/tree/official) (1280) /<br> [donut-base-finetuned-cord-v1](https://huggingface.co/naver-clova-ix/donut-base-finetuned-cord-v1/tree/official) (1280) /<br> [donut-base-finetuned-cord-v1-2560](https://huggingface.co/naver-clova-ix/donut-base-finetuned-cord-v1-2560/tree/official) | [gradio space web demo](https://huggingface.co/spaces/naver-clova-ix/donut-base-finetuned-cord-v2),<br>[google colab demo (updated at 23.06.15)](https://colab.research.google.com/drive/1NMSqoIZ_l39wyRD7yVjw2FIuU2aglzJi?usp=sharing) |
-| [Train Ticket](https://github.com/beacandler/EATEN) (Document Parsing)   |   0.6   |  98.7    | [donut-base-finetuned-zhtrainticket](https://huggingface.co/naver-clova-ix/donut-base-finetuned-zhtrainticket/tree/official) | [google colab demo (updated at 23.06.15)](https://colab.research.google.com/drive/1YJBjllahdqNktXaBlq5ugPh1BCm8OsxI?usp=sharing) |
-| [RVL-CDIP](https://www.cs.cmu.edu/~aharley/rvl-cdip) (Document Classification)     |  0.75   |   95.3      | [donut-base-finetuned-rvlcdip](https://huggingface.co/naver-clova-ix/donut-base-finetuned-rvlcdip/tree/official) | [gradio space web demo](https://huggingface.co/spaces/nielsr/donut-rvlcdip),<br>[google colab demo (updated at 23.06.15)](https://colab.research.google.com/drive/1iWOZHvao1W5xva53upcri5V6oaWT-P0O?usp=sharing) |
-| [DocVQA Task1](https://rrc.cvc.uab.es/?ch=17) (Document VQA) |  0.78       | 67.5 | [donut-base-finetuned-docvqa](https://huggingface.co/naver-clova-ix/donut-base-finetuned-docvqa/tree/official) | [gradio space web demo](https://huggingface.co/spaces/nielsr/donut-docvqa),<br>[google colab demo (updated at 23.06.15)](https://colab.research.google.com/drive/1oKieslZCulFiquequ62eMGc-ZWgay4X3?usp=sharing) |
+The links to the datasets are here:
 
-The links to the pre-trained backbones are here:
-- [`donut-base`](https://huggingface.co/naver-clova-ix/donut-base/tree/official): trained with 64 A100 GPUs (~2.5 days), number of layers (encoder: {2,2,14,2}, decoder: 4), input size 2560x1920, swin window size 10, IIT-CDIP (11M) and SynthDoG (English, Chinese, Japanese, Korean, 0.5M x 4).
-- [`donut-proto`](https://huggingface.co/naver-clova-ix/donut-proto/tree/official): (preliminary model) trained with 8 V100 GPUs (~5 days), number of layers (encoder: {2,2,18,2}, decoder: 4), input size 2048x1536, swin window size 8, and SynthDoG (English, Japanese, Korean, 0.4M x 3).
+- [`BD-EnKo`](https://huggingface.co/datasets/shreyanshu09/BD-EnKo): 83,394 samples.
+- [`Complete Dataset`](https://huggingface.co/datasets/shreyanshu09/Block_Diagram): 84,925 samples.
 
-Please see [our paper](#how-to-cite) for more details.
+## Dataset Format
 
-## SynthDoG datasets
+This dataset follows the given structure:
 
-![image](misc/sample_synthdog.png)
-
-The links to the SynthDoG-generated datasets are here:
-
-- [`synthdog-en`](https://huggingface.co/datasets/naver-clova-ix/synthdog-en): English, 0.5M.
-- [`synthdog-zh`](https://huggingface.co/datasets/naver-clova-ix/synthdog-zh): Chinese, 0.5M.
-- [`synthdog-ja`](https://huggingface.co/datasets/naver-clova-ix/synthdog-ja): Japanese, 0.5M.
-- [`synthdog-ko`](https://huggingface.co/datasets/naver-clova-ix/synthdog-ko): Korean, 0.5M.
-
-To generate synthetic datasets with our SynthDoG, please see `./synthdog/README.md` and [our paper](#how-to-cite) for details.
-
-## Updates
-
-**_2023-06-15_** We have updated all Google Colab demos to ensure its proper working.<br>
-**_2022-11-14_** New version 1.0.9 is released (`pip install donut-python --upgrade`). See [1.0.9 Release Notes](https://github.com/clovaai/donut/releases/tag/1.0.9).<br>
-**_2022-08-12_** Donut 🍩 is also available at [huggingface/transformers 🤗](https://huggingface.co/docs/transformers/main/en/model_doc/donut) (contributed by [@NielsRogge](https://github.com/NielsRogge)). `donut-python` loads the pre-trained weights from the `official` branch of the model repositories. See [1.0.5 Release Notes](https://github.com/clovaai/donut/releases/tag/1.0.5).<br>
-**_2022-08-05_** A well-executed hands-on tutorial on donut 🍩 is published at [Towards Data Science](https://towardsdatascience.com/ocr-free-document-understanding-with-donut-1acfbdf099be) (written by [@estaudere](https://github.com/estaudere)).<br>
-**_2024-05-30_** First Commit, We release our code, model, and dataset.
-
-## Software installation
-
-[![PyPI](https://img.shields.io/pypi/v/donut-python?color=green&label=pip%20install%20donut-python)](https://pypi.org/project/donut-python)
-[![Downloads](https://static.pepy.tech/personalized-badge/donut-python?period=total&units=international_system&left_color=grey&right_color=brightgreen&left_text=Downloads)](https://pepy.tech/project/donut-python)
-
-```bash
-pip install donut-python
-```
-
-or clone this repository and install the dependencies:
-```bash
-git clone https://github.com/clovaai/donut.git
-cd donut/
-conda create -n donut_official python=3.7
-conda activate donut_official
-pip install .
-```
-
-We tested [donut-python](https://pypi.org/project/donut-python/1.0.1) == 1.0.1 with:
-- [torch](https://github.com/pytorch/pytorch) == 1.11.0+cu113 
-- [torchvision](https://github.com/pytorch/vision) == 0.12.0+cu113
-- [pytorch-lightning](https://github.com/Lightning-AI/lightning) == 1.6.4
-- [transformers](https://github.com/huggingface/transformers) == 4.11.3
-- [timm](https://github.com/rwightman/pytorch-image-models) == 0.5.4
-
-**Note**: From several reported issues, we have noticed increased challenges in configuring the testing environment for `donut-python` due to recent updates in key dependency libraries. While we are actively working on a solution, we have updated the Google Colab demo (as of June 15, 2023) to ensure its proper working. For assistance, we encourage you to refer to the following demo links: [CORD Colab Demo](https://colab.research.google.com/drive/1NMSqoIZ_l39wyRD7yVjw2FIuU2aglzJi?usp=sharing), [Train Ticket Colab Demo](https://colab.research.google.com/drive/1YJBjllahdqNktXaBlq5ugPh1BCm8OsxI?usp=sharing), [RVL-CDIP Colab Demo](https://colab.research.google.com/drive/1iWOZHvao1W5xva53upcri5V6oaWT-P0O?usp=sharing), [DocVQA Colab Demo](https://colab.research.google.com/drive/1oKieslZCulFiquequ62eMGc-ZWgay4X3?usp=sharing).
-
-## Getting Started
-
-### Data
-
-This repository assumes the following structure of dataset:
 ```bash
 > tree dataset_name
 dataset_name
@@ -116,85 +53,16 @@ dataset_name
               .
 
 > cat dataset_name/test/metadata.jsonl
-{"file_name": {image_path0}, "ground_truth": "{\"gt_parse\": {ground_truth_parse}, ... {other_metadata_not_used} ... }"}
-{"file_name": {image_path1}, "ground_truth": "{\"gt_parse\": {ground_truth_parse}, ... {other_metadata_not_used} ... }"}
+{"file_name": {image_path0}, "ground_truth": "{\"gt_parse\": {\"c2t\": \"{ground_truth_parse}\"}}"}
+{"file_name": {image_path1}, "ground_truth": "{\"gt_parse\": {\"c2t\": \"{ground_truth_parse}\"}}"}
      .
      .
 ```
 
 - The structure of `metadata.jsonl` file is in [JSON Lines text format](https://jsonlines.org), i.e., `.jsonl`. Each line consists of
   - `file_name` : relative path to the image file.
-  - `ground_truth` : string format (json dumped), the dictionary contains either `gt_parse` or `gt_parses`. Other fields (metadata) can be added to the dictionary but will not be used.
-- `donut` interprets all tasks as a JSON prediction problem. As a result, all `donut` model training share a same pipeline. For training and inference, the only thing to do is preparing `gt_parse` or `gt_parses` for the task in format described below.
+  - `ground_truth` : string format (json dumped), the dictionary contains `gt_parse`.
 
-#### For Document Classification
-The `gt_parse` follows the format of `{"class" : {class_name}}`, for example, `{"class" : "scientific_report"}` or `{"class" : "presentation"}`.
-- Google colab demo is available [here](https://colab.research.google.com/drive/1xUDmLqlthx8A8rWKLMSLThZ7oeRJkDuU?usp=sharing).
-- Gradio web demo is available [here](https://huggingface.co/spaces/nielsr/donut-rvlcdip).
 
-#### For Document Information Extraction
-The `gt_parse` is a JSON object that contains full information of the document image, for example, the JSON object for a receipt may look like `{"menu" : [{"nm": "ICE BLACKCOFFEE", "cnt": "2", ...}, ...], ...}`.
-- More examples are available at [CORD dataset](https://huggingface.co/datasets/naver-clova-ix/cord-v2).
-- Google colab demo is available [here](https://colab.research.google.com/drive/1o07hty-3OQTvGnc_7lgQFLvvKQuLjqiw?usp=sharing).
-- Gradio web demo is available [here](https://huggingface.co/spaces/naver-clova-ix/donut-base-finetuned-cord-v2).
-
-#### For Document Visual Question Answering
-The `gt_parses` follows the format of `[{"question" : {question_sentence}, "answer" : {answer_candidate_1}}, {"question" : {question_sentence}, "answer" : {answer_candidate_2}}, ...]`, for example, `[{"question" : "what is the model name?", "answer" : "donut"}, {"question" : "what is the model name?", "answer" : "document understanding transformer"}]`.
-- DocVQA Task1 has multiple answers, hence `gt_parses` should be a list of dictionary that contains a pair of question and answer.
-- Google colab demo is available [here](https://colab.research.google.com/drive/1Z4WG8Wunj3HE0CERjt608ALSgSzRC9ig?usp=sharing).
-- Gradio web demo is available [here](https://huggingface.co/spaces/nielsr/donut-docvqa).
-
-#### For (Pseudo) Text Reading Task
-The `gt_parse` looks like `{"text_sequence" : "word1 word2 word3 ... "}`
-- This task is also a pre-training task of Donut model.
-- You can use our **SynthDoG** 🐶 to generate synthetic images for the text reading task with proper `gt_parse`. See `./synthdog/README.md` for details.
-
-### Training
-
-This is the configuration of Donut model training on [CORD](https://github.com/clovaai/cord) dataset used in our experiment. 
-We ran this with a single NVIDIA A100 GPU.
-
-```bash
-python train.py --config config/train_cord.yaml \
-                --pretrained_model_name_or_path "naver-clova-ix/donut-base" \
-                --dataset_name_or_paths '["naver-clova-ix/cord-v2"]' \
-                --exp_version "test_experiment"    
-  .
-  .                                                                                                                                                                                                                                         
-Prediction: <s_menu><s_nm>Lemon Tea (L)</s_nm><s_cnt>1</s_cnt><s_price>25.000</s_price></s_menu><s_total><s_total_price>25.000</s_total_price><s_cashprice>30.000</s_cashprice><s_changeprice>5.000</s_changeprice></s_total>
-Answer: <s_menu><s_nm>Lemon Tea (L)</s_nm><s_cnt>1</s_cnt><s_price>25.000</s_price></s_menu><s_total><s_total_price>25.000</s_total_price><s_cashprice>30.000</s_cashprice><s_changeprice>5.000</s_changeprice></s_total>
-Normed ED: 0.0
-Prediction: <s_menu><s_nm>Hulk Topper Package</s_nm><s_cnt>1</s_cnt><s_price>100.000</s_price></s_menu><s_total><s_total_price>100.000</s_total_price><s_cashprice>100.000</s_cashprice><s_changeprice>0</s_changeprice></s_total>
-Answer: <s_menu><s_nm>Hulk Topper Package</s_nm><s_cnt>1</s_cnt><s_price>100.000</s_price></s_menu><s_total><s_total_price>100.000</s_total_price><s_cashprice>100.000</s_cashprice><s_changeprice>0</s_changeprice></s_total>
-Normed ED: 0.0
-Prediction: <s_menu><s_nm>Giant Squid</s_nm><s_cnt>x 1</s_cnt><s_price>Rp. 39.000</s_price><s_sub><s_nm>C.Finishing - Cut</s_nm><s_price>Rp. 0</s_price><sep/><s_nm>B.Spicy Level - Extreme Hot Rp. 0</s_price></s_sub><sep/><s_nm>A.Flavour - Salt & Pepper</s_nm><s_price>Rp. 0</s_price></s_sub></s_menu><s_sub_total><s_subtotal_price>Rp. 39.000</s_subtotal_price></s_sub_total><s_total><s_total_price>Rp. 39.000</s_total_price><s_cashprice>Rp. 50.000</s_cashprice><s_changeprice>Rp. 11.000</s_changeprice></s_total>
-Answer: <s_menu><s_nm>Giant Squid</s_nm><s_cnt>x1</s_cnt><s_price>Rp. 39.000</s_price><s_sub><s_nm>C.Finishing - Cut</s_nm><s_price>Rp. 0</s_price><sep/><s_nm>B.Spicy Level - Extreme Hot</s_nm><s_price>Rp. 0</s_price><sep/><s_nm>A.Flavour- Salt & Pepper</s_nm><s_price>Rp. 0</s_price></s_sub></s_menu><s_sub_total><s_subtotal_price>Rp. 39.000</s_subtotal_price></s_sub_total><s_total><s_total_price>Rp. 39.000</s_total_price><s_cashprice>Rp. 50.000</s_cashprice><s_changeprice>Rp. 11.000</s_changeprice></s_total>
-Normed ED: 0.039603960396039604                                                                                                                                  
-Epoch 29: 100%|█████████████| 200/200 [01:49<00:00,  1.82it/s, loss=0.00327, exp_name=train_cord, exp_version=test_experiment]
-```
-
-Some important arguments:
-
-- `--config` : config file path for model training.
-- `--pretrained_model_name_or_path` : string format, model name in Hugging Face modelhub or local path.
-- `--dataset_name_or_paths` : string format (json dumped), list of dataset names in Hugging Face datasets or local paths.
-- `--result_path` : file path to save model outputs/artifacts.
-- `--exp_version` : used for experiment versioning. The output files are saved at `{result_path}/{exp_version}/*`
-
-### Test
-
-With the trained model, test images and ground truth parses, you can get inference results and accuracy scores.
-
-```bash
-python test.py --dataset_name_or_path naver-clova-ix/cord-v2 --pretrained_model_name_or_path ./result/train_cord/test_experiment --save_path ./result/output.json
-100%|█████████████| 100/100 [00:35<00:00,  2.80it/s]
-Total number of samples: 100, Tree Edit Distance (TED) based accuracy score: 0.9129639764131697, F1 accuracy score: 0.8406020841373987
-```
-
-Some important arguments:
-
-- `--dataset_name_or_path` : string format, the target dataset name in Hugging Face datasets or local path.
-- `--pretrained_model_name_or_path` : string format, the model name in Hugging Face modelhub or local path.
-- `--save_path`: file path to save predictions and scores.
 
 
