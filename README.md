@@ -24,6 +24,8 @@ The links to the datasets are here:
 - [`BD-EnKo`](https://huggingface.co/datasets/shreyanshu09/BD-EnKo): 83,394 samples.
 - [`Complete Dataset`](https://huggingface.co/datasets/shreyanshu09/Block_Diagram): 84,925 samples.
 
+[`Complete Dataset`](https://huggingface.co/datasets/shreyanshu09/Block_Diagram) is the full dataset used to train the *global information extractor model*. It includes BD-EnKo, CBD, FC_A, and FC_B datasets.
+
 ## Dataset Format
 
 This dataset follows the given structure:
