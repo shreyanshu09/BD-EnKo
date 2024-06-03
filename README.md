@@ -13,8 +13,6 @@ Official Implementation of BD-EnKo Dataset and Generator
 
 **BD-EnKo** dataset provides a diverse and high-quality benchmark dataset in English and Korean for block diagram understanding. This dataset is created using our innovative data collection methodology, ensuring flexibility and scalability to support a wide range of applications in both languages.
 
-<img width="946" alt="image" src="misc/overview.png">
-
 The official implementation of the BlockNet model is available in this [GitHub](https://github.com/shreyanshu09/BlockNet) repository.
 
 ## Datasets
@@ -64,5 +62,30 @@ dataset_name
   - `ground_truth` : string format (json dumped), the dictionary contains `gt_parse`.
 
 
+## Dataset description
 
+This dataset contains different types of block diagram images with their high-quality summaries.
+
+| Types           | Train |         | Validation |         |
+|-----------------|-------|---------|------------|---------|
+|                 | English | Korean | English    | Korean  |
+|-----------------|---------|--------|------------|---------|
+| Flowchart       | 7,875   | 7,678  | 875        | 854     |
+| GraphLR         | 5,462   | 2,861  | 607        | 318     |
+| GraphTD         | 3,500   | 2,402  | 389        | 267     |
+| Journey         | 8,494   | 8,858  | 942        | 985     |
+| Sequence        | 2,708   | 3,539  | 301        | 394     |
+| Simple Graph    | 3,825   | 1,194  | 425        | 133     |
+| State Diagram   | 6,444   | 6,265  | 717        | 693     |
+| C4              | 3,549   | 0      | 395        | 0       |
+| Real World      | 76      | 304    | 15         | 50      |
+|-----------------|---------|--------|------------|---------|
+| **Total**       | **41,933** | **33,101** | **4,666**    | **3,694** |
+
+
+## Topics
+
+It contains wide variety of topics
+
+![image](misc/wordcloud.png)
 
