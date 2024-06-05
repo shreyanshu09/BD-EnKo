@@ -33,12 +33,6 @@ This dataset follows the given structure:
 ```bash
 > tree dataset_name
 dataset_name
-├── test
-│   ├── metadata.jsonl
-│   ├── {image_path0}
-│   ├── {image_path1}
-│             .
-│             .
 ├── train
 │   ├── metadata.jsonl
 │   ├── {image_path0}
@@ -83,6 +77,12 @@ This dataset contains different types of block diagram images with their high-qu
 | Real World      | 76      | 304    | 15         | 50      |
 |-----------------|---------|--------|------------|---------|
 | **Total**       | **41,933** | **33,101** | **4,666**    | **3,694** |
+
+
+## Dataset Generator
+
+![image](misc/data_gen.png)
+
 
 
 ## Topics
