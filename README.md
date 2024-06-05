@@ -22,7 +22,8 @@ The official implementation of the BlockNet model is available in this [GitHub](
 </p>
 
 
-Sample dataset from BD-EnKo dataset is [here]()
+Sample data from the BD-EnKo dataset is available [here](https://github.com/shreyanshu09/BD-EnKo/tree/main/BD-EnKo_dataset_sample).
+
 The links to the datasets are here:
 
 - [`BD-EnKo`](https://huggingface.co/datasets/shreyanshu09/BD-EnKo): 83,394 samples.  
