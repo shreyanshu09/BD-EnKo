@@ -17,7 +17,10 @@ The official implementation of the BlockNet model is available in this [GitHub](
 
 ## Datasets
 
-![image](misc/)
+<p align="center">
+  <img src="misc/dataset_sample.png" alt="Dataset Sample" />
+</p>
+
 
 The links to the datasets are here:
 
