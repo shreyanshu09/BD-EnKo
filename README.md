@@ -83,13 +83,16 @@ This dataset contains different types of block diagram images with their high-qu
 
 `data_generation.ipynb` file serves as a versatile tool for creating a wide range of block diagrams in any desired language. By modifying key parameters such as the prompt, theme, and block diagram category, users can easily generate various types of block diagrams to meet specific needs. This flexibility allows for customization in the design and labeling of diagrams, accommodating diverse requirements across different fields and applications. 
 
+
 ![image](misc/data_gen.png)
 
 
 
 ## Topics
 
-It contains wide variety of topics
+It contains a wide variety of topics.
 
 ![image](misc/wordcloud.png)
+
+![image](misc/top_topics.png)
 
