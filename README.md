@@ -46,7 +46,7 @@ dataset_name
               .
               .
 
-> cat dataset_name/test/metadata.jsonl
+> cat dataset_name/train/metadata.jsonl
 {"file_name": {image_path0}, "ground_truth": "{\"gt_parse\": {\"c2t\": \"{ground_truth_parse}\"}}"}
 {"file_name": {image_path1}, "ground_truth": "{\"gt_parse\": {\"c2t\": \"{ground_truth_parse}\"}}"}
      .
